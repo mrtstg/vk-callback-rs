@@ -5,7 +5,7 @@ services:
     image: redis
     hostname: redis
   callback:
-    image: callback-rs
+    image: docker.io/mrtstg/vk-callback-rs
     restart: always
     ports:
       - 3000:3000
