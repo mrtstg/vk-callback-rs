@@ -1,0 +1,24 @@
+server_ip = "0.0.0.0"
+server_port = 80
+
+log_level = "INFO"
+
+workers_amount = 4
+handlers_amount = 2
+
+redis_connections = 2
+redis_url = "redis://redis:6379"
+
+group_id = 1
+confirmation = "key"
+secret = "secret"
+
+stream_name = "messages"
+stream_length = 100
+
+[env_mapping]
+redis_url = "REDIS_URL"
+log_level = "LOG_LEVEL"
+server_port = "PORT"
+workers_amount = "WORKERS"
+handlers_amount = "HANDLERS"

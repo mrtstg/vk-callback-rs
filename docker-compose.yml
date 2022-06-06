@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  redis:
+    restart: always
+    image: redis
+    hostname: redis
+  callback:
+    image: callback-rs
+    restart: always
+    ports:
+      - 3000:3000
+    environment:
+      PORT: 3000
+      LOG_LEVEL: INFO
+      REDIS_URL: redis://redis:6379
+      WORKERS: 4
+      HANDLERS: 2
+    volumes:
+      - ./deployment/config.toml:/usr/local/bin/config.toml
+    depends_on:
+      - redis
